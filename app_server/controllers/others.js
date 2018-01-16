@@ -1,0 +1,6 @@
+var express = require('express');
+
+/* Get 'about' page */
+module.exports.about=function (req,res) {
+  res.render('generic-text',{title: 'About' });
+};
