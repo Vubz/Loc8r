@@ -20,7 +20,8 @@ var locationsSchema = new mongoose.Schema({
   rating: {type: Number, 'default': 0, min:0, max: 5},
   facilities: [String],
   coords: {type: [Number], index: '2dsphere'},
-  openingTimes: [openingTimesSchema]
+  openingTimes: [openingTimesSchema],
+  reviews: [reviewSchema]
 });
 
 mongoose.model('Location',locationsSchema);
@@ -65,4 +66,17 @@ reviewText: "It was amazing. Coffee was great, and the wifi was fast."
 }
 }
 })
+*/
+
+
+/*
+db.locations.find({name:"Starcups"}).forEach( function(item){
+ for(i=0; i!= item.reviews.length; i++){
+  print("here")
+  item.reviews[i]._id = item.reviews[i].id;
+  delete item.reviews[i].id;
+ }
+ db.locations.update({_id: item._id}, item);
+});
+
 */
