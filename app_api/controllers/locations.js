@@ -87,6 +87,7 @@ module.exports.locationsListByDistance = function (req,res) {
   Loc.geoNear(point,geoOptions, function (err, results, stats) {
     var locations = [];
     if (err){
+
       sendJsonResponse(res, 404, err)
       return;
     } else {
