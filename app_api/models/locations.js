@@ -12,6 +12,8 @@ var reviewSchema = new mongoose.Schema({
     rating: {type: Number, required: true, min:0, max: 5},
     reviewText: {type: String, required: true},
     createdOn: {type: Date, 'default': Date.now}
+},{
+  usePushEach: true
 });
 
 var locationsSchema = new mongoose.Schema({
@@ -22,6 +24,8 @@ var locationsSchema = new mongoose.Schema({
   coords: {type: [Number], index: '2dsphere'},
   openingTimes: [openingTimesSchema],
   reviews: [reviewSchema]
+},{
+  usePushEach: true
 });
 
 mongoose.model('Location',locationsSchema);

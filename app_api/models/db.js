@@ -1,4 +1,6 @@
+//Require schemas
 require('./locations');
+require('./users')
 
 const mongoose = require('mongoose');
 var gracefulShutdown;
